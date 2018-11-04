@@ -2,8 +2,9 @@ require 'rails_helper'
 
 describe Author, type: :model do
 
-    author = Author.new(first_name: "Alan", last_name: "Turing", homepage: "http://wikipedia.org/Alan_Turing")
-    
+    # author = Author.new(first_name: "Alan", last_name: "Turing", homepage: "http://wikipedia.org/Alan_Turing")
+    author = FactoryBot.create(:author)
+
     it 'should have a first name, last name and a homepage' do
         
         expect(author.first_name).to eq("Alan")
