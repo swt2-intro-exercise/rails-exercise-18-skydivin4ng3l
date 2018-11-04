@@ -28,7 +28,7 @@ describe "author index page", type: :feature do
     end
 
     it 'should have a table listing the full names as well as homepages of autors ' do
-        expect(page).to have_table 'First Name'
+        expect(page).to have_table 
 
     end
 
