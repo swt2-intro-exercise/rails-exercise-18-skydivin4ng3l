@@ -23,7 +23,10 @@ describe "author index page", type: :feature do
     
     it "should have a link to edit each authors data" do
         expect(page).to have_link 'Edit', href: edit_author_path(@author)
+    end
 
+    it "should have a link to delete each authors data" do
+        expect(page).to have_link 'Delete', href: author_path(@author)
     end
 
     it 'should have a table listing the full names as well as homepages of autors ' do
