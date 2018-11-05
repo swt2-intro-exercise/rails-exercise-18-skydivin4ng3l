@@ -1,5 +1,6 @@
 class Author < ApplicationRecord
-    validates :first_name, :last_name, :homepage, presence: true
+    validates :first_name, :last_name, :homepage, presence: true,
+                                                    length: {minimum:3}
     
 
     def name

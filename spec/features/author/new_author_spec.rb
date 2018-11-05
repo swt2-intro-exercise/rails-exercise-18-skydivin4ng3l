@@ -1,12 +1,8 @@
 require 'rails_helper'
 
 describe "New author page", type: :feature do
- 
- it "should render without error" do
-   visit new_author_path
- end
 
- it "should have text inputs for an author's first name, last name, and homepage" do
+  it "should have text inputs for an author's first name, last name, and homepage" do
     visit new_author_path
     
     # these are the standard names given to inputs by the form builder
@@ -15,4 +11,15 @@ describe "New author page", type: :feature do
     expect(page).to have_field('author[homepage]')
   end
 
+  it 'should hint the user that the last name is missing ' do
+    visit new_author_path
+    page.fill_in 'author[first_name]', with: 'Alan'
+    # page.fill_in 'author[last_name]', with: ''
+    page.fill_in 'author[homepage]', with: 'http://wikipedia.org/Alan_Turing'
+    find('input[type="submit"]').click
+    # @author = Author.new(first_name: "Alan", last_name: "Turing", homepage: "http://wikipedia.org/Alan_Turing")
+
+    expect(page).to have_text("Last name can't be blank") 
+  end
+  
 end

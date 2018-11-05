@@ -3,12 +3,6 @@ require 'rails_helper'
 describe "author index page", type: :feature do
 
     before :each do
-        # visit new_author_path
-        # page.fill_in 'author[first_name]', with: 'Alan'
-        # page.fill_in 'author[last_name]', with: 'Turing'
-        # page.fill_in 'author[homepage]', with: 'http://wikipedia.org/Alan_Turing'
-        # find('input[type="submit"]').click
-        # @author = Author.new(first_name: "Alan", last_name: "Turing", homepage: "http://wikipedia.org/Alan_Turing")
         @author = FactoryBot.create(:author)
         visit authors_path
 
@@ -28,7 +22,7 @@ describe "author index page", type: :feature do
     end
 
     it 'should have a table listing the full names as well as homepages of autors ' do
-        expect(page).to have_table 
+        expect(page).to have_table "authors_table"
 
     end
 
