@@ -8,9 +8,9 @@ describe "author index page", type: :feature do
         # page.fill_in 'author[last_name]', with: 'Turing'
         # page.fill_in 'author[homepage]', with: 'http://wikipedia.org/Alan_Turing'
         # find('input[type="submit"]').click
-        visit authors_path
         # @author = Author.new(first_name: "Alan", last_name: "Turing", homepage: "http://wikipedia.org/Alan_Turing")
         @author = FactoryBot.create(:author)
+        visit authors_path
 
     end
 
