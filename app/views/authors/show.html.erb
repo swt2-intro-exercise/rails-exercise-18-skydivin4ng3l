@@ -13,5 +13,17 @@
   <strong>Homepage:</strong>
   <%= @author.homepage %>
 </p>
+
+<p>
+  <strong>Papers:</strong>
+  <table id= "papers_table">
+    <%= @author.papers.each do |paper| %>
+      <tr>
+        <td><%= paper.title %></td>
+        <td><%= link_to '#{paper}', paper_path(paper) %></td>
+      </tr>
+    <% end %>
+  </table>
+</p>
 <%= link_to 'Edit', edit_author_path(@author) %></td>
 <%= link_to 'Back', authors_path %>
