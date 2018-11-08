@@ -13,6 +13,12 @@ class PapersController < ApplicationController
   # GET /papers/new
   def new
     @paper = Paper.new
+    @authors = Author.all
+
+    # respond_to do |format|
+    #   format.html # new.html.erb
+    #   format.xml { render :xml => @paper }
+    # end
   end
 
   # GET /papers/1/edit

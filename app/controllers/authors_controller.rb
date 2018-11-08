@@ -9,6 +9,12 @@ class AuthorsController < ApplicationController
 
     def new
         @author = Author.new
+        # @papers = Paper.all
+
+        # respond_to do |format|
+        #     format.html # new.html.erb
+        #     format.xml { render :xml => @paper }
+        #   end
     end
 
     def edit
