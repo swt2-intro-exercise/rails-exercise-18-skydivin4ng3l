@@ -3,10 +3,11 @@ require 'rails_helper'
 RSpec.describe "papers/new", type: :view do
   before(:each) do
     assign(:paper, Paper.new(
-      :title => "MyString",
-      :venue => "MyString",
-      :year => 1
+      :title => "MyTitle",
+      :venue => "MyVenue",
+      :year => 1999
     ))
+
   end
 
   it "renders new paper form" do

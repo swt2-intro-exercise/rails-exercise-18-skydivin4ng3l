@@ -5,7 +5,7 @@ RSpec.describe "papers/show", type: :view do
     @paper = assign(:paper, Paper.create!(
       :title => "Title",
       :venue => "Venue",
-      :year => 2
+      :year => 2000
     ))
   end
 
@@ -13,6 +13,6 @@ RSpec.describe "papers/show", type: :view do
     render
     expect(rendered).to match(/Title/)
     expect(rendered).to match(/Venue/)
-    expect(rendered).to match(/2/)
+    expect(rendered).to match(/2000/)
   end
 end

@@ -6,12 +6,12 @@ RSpec.describe "papers/index", type: :view do
       Paper.create!(
         :title => "Title",
         :venue => "Venue",
-        :year => 2
+        :year => 2000
       ),
       Paper.create!(
         :title => "Title",
         :venue => "Venue",
-        :year => 2
+        :year => 2000
       )
     ])
   end
@@ -20,6 +20,6 @@ RSpec.describe "papers/index", type: :view do
     render
     assert_select "tr>td", :text => "Title".to_s, :count => 2
     assert_select "tr>td", :text => "Venue".to_s, :count => 2
-    assert_select "tr>td", :text => 2.to_s, :count => 2
+    assert_select "tr>td", :text => 2000.to_s, :count => 2
   end
 end
