@@ -28,12 +28,19 @@ RSpec.describe PapersController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Paper. As you add validations to Paper, be sure to
   # adjust the attributes here as well.
+  let(:paper){ FactoryBot.create(:paper)}
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    # skip("Add a hash of attributes valid for your model")
+    { "title" => paper.title,
+    "venue" => paper.venue,
+    "year" => paper.year }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    # skip("Add a hash of attributes invalid for your model")
+    { "title" => "",
+    "venue" => "",
+    "year" => 430 }
   }
 
   # This should return the minimal set of values that should be in the session
