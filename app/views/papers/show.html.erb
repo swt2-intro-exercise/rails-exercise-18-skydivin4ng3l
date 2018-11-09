@@ -17,12 +17,13 @@
 
 <p>
   <strong>Authors:</strong>
+  <!--<%= @paper.authors %>-->
   <!--<%= @paper.authors.map{ |author| author.name }.join(', ') %>-->
    <table id= "authors_table">
-    <%= @paper.authors.each do |author| %>
+    <% @paper.authors.each do |author| %>
       <tr>
         <td><%= author.name %></td>
-        <td><%= link_to '#{author.name}', author_path(author) %></td> 
+        <td><%= link_to author.name, author_path(author) %></td> 
       </tr>
     <% end %>
   </table>

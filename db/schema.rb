@@ -23,8 +23,6 @@ ActiveRecord::Schema.define(version: 2018_11_08_210857) do
   create_table "authors_papers", id: false, force: :cascade do |t|
     t.integer "author_id", null: false
     t.integer "paper_id", null: false
-    t.index ["author_id", "paper_id"], name: "index_authors_papers_on_author_id_and_paper_id"
-    t.index ["paper_id", "author_id"], name: "index_authors_papers_on_paper_id_and_author_id"
   end
 
   create_table "papers", force: :cascade do |t|
