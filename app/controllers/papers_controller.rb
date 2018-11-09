@@ -13,7 +13,7 @@ class PapersController < ApplicationController
   # GET /papers/new
   def new
     @paper = Paper.new
-    @authors = Author.all
+    # @authors = Author.all
 
     # respond_to do |format|
     #   format.html # new.html.erb
@@ -59,6 +59,6 @@ class PapersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def paper_params
-      params.require(:paper).permit(:title, :venue, :year)
+      params.require(:paper).permit(:title, :venue, :year, :author_ids => [])
     end
 end
