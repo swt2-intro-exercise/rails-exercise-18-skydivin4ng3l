@@ -17,10 +17,10 @@
 <p>
   <strong>Papers:</strong>
   <table id= "papers_table">
-    <%= @author.papers.each do |paper| %>
+    <% @author.papers.each do |paper| %>
       <tr>
         <td><%= paper.title %></td>
-        <td><%= link_to '#{paper}', paper_path(paper) %></td>
+        <td><%= link_to "Show paper", paper_path(paper) %></td>
       </tr>
     <% end %>
   </table>
